@@ -1,5 +1,3 @@
-import java.util.Pair;
-
 import java.io.*;
 import java.util.*;
 
@@ -56,5 +54,23 @@ class MergeIntervals {
         int[][] results = new MergeIntervals().merge(nums, max);
         for (int i = 0; i < results.length; ++i)
             System.out.println(String.valueOf(results[i][0]) + " " + String.valueOf(results[i][1]));
+    }
+    
+    private class Pair<T, U> {
+        private T key;
+        private U value;
+
+        Pair(T key, U value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        T getKey() {
+            return this.key;
+        }
+
+        U getValue() {
+            return this.value;
+        }
     }
 }
