@@ -5,10 +5,33 @@ class MatrixTraversal  {
 
   // complete the below function implementation
   public List<Integer> valueAtNewPosition(int[][] matrix, int currX, int currY, int dir, int steps) {
-    List<Integer> lst = new ArrayList<Integer>();
+    
+    try {
+      List<Integer> lst = new ArrayList<Integer>();
+      if(dir == 1) {
+        for(int i = currY+1; i < dir; i++)
+          lst.add(matrix[currX][i]);
+      } else if(dir == 2) {
+        for(int i = currX+1; i < dir; i++)
+          lst.add(matrix[i][currY]);
+  
+      } else if (dir == 3) {
+        for(int i = currY-1; i < dir; i--)
+          lst.add(matrix[currX][i]);
+  
+      } else if (dir == 4) {
+        for(int i = currX-1; i < dir; i--)
+          lst.add(matrix[i][currY]);
+      }
+      return lst;
+    } catch(ArrayIndexOutOfBoundsException e) {
+      List<Integer> lst = new ArrayList<Integer>();
+      lst.add(-1);
+      return lst;
 
-    return lst;
+    }
   }
+    
 
   public static void main(String args[]) {
     Scanner scanner = new Scanner(System.in);
