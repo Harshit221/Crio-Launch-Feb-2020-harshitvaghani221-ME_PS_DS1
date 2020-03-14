@@ -7,7 +7,7 @@ class MergeIntervals {
         int range[] = new int[max+2];
         for(int i = 0; i<intervals.length; i++) {
             range[intervals[i][0]]++;
-            range[intervals[i+1][1]]--;
+            range[intervals[i][1] + 1]--;
         }
         for(int i = 1; i < range.length; i++) {
             range[i] += range[i-1];
