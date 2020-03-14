@@ -9,18 +9,19 @@ class MatrixTraversal  {
     try {
       List<Integer> lst = new ArrayList<Integer>();
       if(dir == 1) {
-        for(int i = currY+1; i < dir; i++)
+        int count = 0;
+        for(int i = currY+1; count < dir; i++,count++)
           lst.add(matrix[currX][i]);
       } else if(dir == 2) {
-        for(int i = currX+1; i < dir; i++)
+        for(int i = currX+1; count < dir; i++,count++)
           lst.add(matrix[i][currY]);
   
       } else if (dir == 3) {
-        for(int i = currY-1; i < dir; i--)
+        for(int i = currY-1; count < dir; i--,count++)
           lst.add(matrix[currX][i]);
   
       } else if (dir == 4) {
-        for(int i = currX-1; i < dir; i--)
+        for(int i = currX-1; count < dir; i--,count++)
           lst.add(matrix[i][currY]);
       }
       return lst;
