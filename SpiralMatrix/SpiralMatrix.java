@@ -7,13 +7,13 @@ class SpiralMatrix {
         List<Integer> list = new ArrayList<>();
         int n = matrix.length - s;
         int m = matrix[0].length - s;
-        for(int i=s;i<n;i++)
+        for(int i=s;i<m;i++)
             list.add(matrix[s][i]);
-        for(int i=s+1;i<m;i++)
+        for(int i=s+1;i<n;i++)
             list.add(matrix[i][n-1]);
-        for(int i=n-2;i>=s;i--)
+        for(int i=m-2;i>=s;i--)
             list.add(matrix[n-1][i]);
-        for(int i=m-2;i>s;i--)
+        for(int i=n-2;i>s;i--)
             list.add(matrix[i][s]);
         return list;
     }
@@ -22,9 +22,9 @@ class SpiralMatrix {
         int n = Math.min(matrix.length, matrix[0].length);
         int lc=(n/2.0 == n/2)?0:1;
         lc += n/2;
-        System.out.printf("%d %d", lc,n);
-        for(int i=0;i<1;i++) {
-            lst.addAll(spiral(matrix,i));
+        
+        for(int s=0;s<lc;s++) {
+            lst.addAll(spiral(matrix,s));
         }
         return lst;
     }
