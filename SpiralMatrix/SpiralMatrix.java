@@ -3,16 +3,18 @@ import java.util.*;
 
 class SpiralMatrix {
     // Implement your solution by completing the below function
-    public List<Integer> spiral(int[][] matrix, int n, int s) {
+    public List<Integer> spiral(int[][] matrix, int s) {
         List<Integer> lst = new ArrayList<>();
+        int n = matrix.length - s;
+        int m = matrix[0].length - s;
         for(int i=s;i<n;i++)
-            list.add([s][i]);
-        for(int i=s+1;i<n;i++)
-            list.add(a[i][n-1]);
+            list.add(matrix[s][i]);
+        for(int i=s+1;i<m;i++)
+            list.add(matrix[i][n-1]);
         for(int i=n-2;i>=s;i--)
-            list.add(a[n-1][i]);
-        for(int i=n-2;i>s;i--)
-            list.add(a[i][s]);
+            list.add(matrix[n-1][i]);
+        for(int i=m-2;i>s;i--)
+            list.add(matrix[i][s]);
         return lst;
     }
     public List<Integer> spiralOrder(int[][] matrix) {
@@ -21,7 +23,7 @@ class SpiralMatrix {
         int lc=(n/2.0 == n/2)?0:1;
         lc += n/2;
         for(int i=0;i<lc;i++) {
-            lst.addAll(spiral(matrix,n-i,i));
+            lst.addAll(spiral(matrix,i));
         }
         return lst;
     }
