@@ -12,7 +12,7 @@ class MergeIntervals {
         for(int i = 1; i < range.length; i++) {
             range[i] += range[i-1];
         }
-        int flag = 0, start, end;
+        int flag = 0, start = 0, end = 0;
         List<Pair<Integer, Integer> > pairList = new ArrayList(); 
         for(int i = 1; i<range.length; i++) {
             if(flag ==0) {
