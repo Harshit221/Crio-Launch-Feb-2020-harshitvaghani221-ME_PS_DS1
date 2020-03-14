@@ -41,9 +41,9 @@ public class LetterCombinationsOfPhoneNumber {
     public static List<String> letterCombinations(String digits) {
         List<String> res = getList(digits.charAt(0));
         for (int i = 1; i < digits.length(); i++) {
-
+            res = crossProduct(res,getList(digits.charAt(i)));
         }
-        return new ArrayList<String>();
+        return res;
     }
 
     public static void main(String[] args) throws IOException {
