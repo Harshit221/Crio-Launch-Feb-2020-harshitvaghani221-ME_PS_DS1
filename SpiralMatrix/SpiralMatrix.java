@@ -22,8 +22,9 @@ class SpiralMatrix {
         int n = Math.min(matrix.length, matrix[0].length);
         int lc=(n/2.0 == n/2)?0:1;
         lc += n/2;
+        System.out.printf("%d %d", lc,n);
         for(int i=0;i<lc;i++) {
-            lst.addAll(spiral(matrix,i));
+            //lst.addAll(spiral(matrix,i));
         }
         return lst;
     }
