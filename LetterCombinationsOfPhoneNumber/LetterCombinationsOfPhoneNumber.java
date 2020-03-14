@@ -5,15 +5,51 @@ import java.lang.*;
 public class LetterCombinationsOfPhoneNumber {
 
     // Implement your solution by completing the below function
-    public List<String> letterCombinations(String digits) {
+    public static List<String> getList(char c) {
+        List<String> res = null;
+        switch(c) {
+            case '2':
+                res = Arrays.asList("A","B","C");
+            case '3':
+                res = Arrays.asList("D","E","F");
+            case '4':
+                res = Arrays.asList("G","H","I");
+            case '5':
+                res = Arrays.asList("J","K","L");
+            case '6':
+                res = Arrays.asList("M","N","O");
+            case '7':
+                res = Arrays.asList("P","Q","R","S");
+            case '8':
+                res = Arrays.asList("T","U","V");
+            case '9':
+                res = Arrays.asList("W","X","Y","Z");
+        }
+        return res;
+    }
+    public static List<String> crossProduct(List<String> a, List<String> b) {
+        List<String> res = new ArrayList<>();
+        for(int i = 0; i < a.size(); i++) {
+            for(int j = 0; j < b.size(); j++) {
+                res.add(a.get(i) + b.get(j));
+            }
+            
+        }
 
-        return new List<String>();
+        return res;
+    }
+    public static List<String> letterCombinations(String digits) {
+        List<String> res = getList(digits.charAt(0));
+        for (int i = 1; i < digits.length(); i++) {
+
+        }
+        return new ArrayList<String>();
     }
 
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         String line = in.readLine();
-        List<String> combinations = new LetterCombinationsOfPhoneNumber().letterCombinations(line);
+        List<String> combinations = letterCombinations(line);
         for (String cmbn : combinations)
             System.out.print(cmbn + " ");
     }
