@@ -1,4 +1,4 @@
-import jdk.internal.util.xml.impl.Pair;
+import java.util.Pair;
 
 import java.io.*;
 import java.util.*;
