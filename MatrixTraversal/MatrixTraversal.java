@@ -8,8 +8,9 @@ class MatrixTraversal  {
     
     try {
       List<Integer> lst = new ArrayList<Integer>();
+      int count = 0;
       if(dir == 1) {
-        int count = 0;
+        
         for(int i = currY+1; count < dir; count++)
           lst.add(matrix[currX][i++]);
       } else if(dir == 2) {
