@@ -31,7 +31,7 @@ class MergeIntervals {
             }
 
         }
-        int[][] result = new int[pairLise.size()][2];
+        int[][] result = new int[pairList.size()][2];
         for(int i = 0; i < pairList.size(); i++) {
             result[i][0] = pairList.get(i).getKey();
             result[i][1] = pairList.get(i).getValue();
