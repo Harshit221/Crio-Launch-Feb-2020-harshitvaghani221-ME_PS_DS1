@@ -4,7 +4,7 @@ import java.util.*;
 class SpiralMatrix {
     // Implement your solution by completing the below function
     public List<Integer> spiral(int[][] matrix, int s) {
-        List<Integer> lst = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         int n = matrix.length - s;
         int m = matrix[0].length - s;
         for(int i=s;i<n;i++)
@@ -15,7 +15,7 @@ class SpiralMatrix {
             list.add(matrix[n-1][i]);
         for(int i=m-2;i>s;i--)
             list.add(matrix[i][s]);
-        return lst;
+        return list;
     }
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> lst = new ArrayList<Integer>();
