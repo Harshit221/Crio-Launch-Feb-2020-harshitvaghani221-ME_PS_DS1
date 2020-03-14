@@ -23,7 +23,7 @@ class SpiralMatrix {
         int lc=(n/2.0 == n/2)?0:1;
         lc += n/2;
         System.out.printf("%d %d", lc,n);
-        for(int i=0;i<lc;i++) {
+        for(int i=0;i<1;i++) {
             lst.addAll(spiral(matrix,i));
         }
         return lst;
