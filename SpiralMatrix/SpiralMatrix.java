@@ -9,7 +9,7 @@ class SpiralMatrix {
         int m = matrix[0].length - s;
         for(int i=s;i<m;i++)
             list.add(matrix[s][i]);
-        for(int i=s+1;i<n;i++)
+        for(int i=s+1;i<=n;i++)
             list.add(matrix[i][n-1]);
         for(int i=m-2;i>=s;i--)
             list.add(matrix[n-1][i]);
