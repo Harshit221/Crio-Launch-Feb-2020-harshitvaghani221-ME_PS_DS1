@@ -9,28 +9,28 @@ public class LetterCombinationsOfPhoneNumber {
         List<String> res = null;
         switch(c) {
             case '2':
-                res = Arrays.asList("A","B","C");
+                res = Arrays.asList("a","b","c");
                 break;
             case '3':
-                res = Arrays.asList("D","E","F");
+                res = Arrays.asList("d","e","f");
                 break;
             case '4':
-                res = Arrays.asList("G","H","I");
+                res = Arrays.asList("g","h","i");
                 break;
             case '5':
-                res = Arrays.asList("J","K","L");
+                res = Arrays.asList("j","k","l");
                 break;
             case '6':
-                res = Arrays.asList("M","N","O");
+                res = Arrays.asList("m","n","o");
                 break;
             case '7':
-                res = Arrays.asList("P","Q","R","S");
+                res = Arrays.asList("p","q","r","s");
                 break;
             case '8':
-                res = Arrays.asList("T","U","V");
+                res = Arrays.asList("t","u","v");
                 break;
             case '9':
-                res = Arrays.asList("W","X","Y","Z");
+                res = Arrays.asList("w","x","y","z");
                 break;
         }
         return res;
