@@ -10,20 +10,28 @@ public class LetterCombinationsOfPhoneNumber {
         switch(c) {
             case '2':
                 res = Arrays.asList("A","B","C");
+                break;
             case '3':
                 res = Arrays.asList("D","E","F");
+                break;
             case '4':
                 res = Arrays.asList("G","H","I");
+                break;
             case '5':
                 res = Arrays.asList("J","K","L");
+                break;
             case '6':
                 res = Arrays.asList("M","N","O");
+                break;
             case '7':
                 res = Arrays.asList("P","Q","R","S");
+                break;
             case '8':
                 res = Arrays.asList("T","U","V");
+                break;
             case '9':
                 res = Arrays.asList("W","X","Y","Z");
+                break;
         }
         return res;
     }
