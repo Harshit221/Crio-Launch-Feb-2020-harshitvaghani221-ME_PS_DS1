@@ -6,7 +6,7 @@ class MessagePassing {
   // Complete the below function implementation
   // Print "Yes" for success and "No" for Failure
   
-  int spiral(int n,int s, int[][] a) {
+  int[][] spiral(int n,int s, int[][] a) {
     int x = s,y = s;
     
     for(int i=s+1;i<n;i++) {
@@ -16,7 +16,7 @@ class MessagePassing {
         y = i;
       }
       else
-        return -1;
+        return null;
     }
       
     for(int i=s+1;i<n;i++) {
@@ -26,7 +26,7 @@ class MessagePassing {
         y = i;
       }
       else
-        return -1;
+        return null;
     }
     for(int i=n-2;i>=s;i--) {
       if(a[x][y] > 0) {
@@ -35,7 +35,7 @@ class MessagePassing {
         y = i;
       }
       else
-        return -1;
+        return null;
       
     }
     for(int i=n-2;i>s;i--) {
@@ -45,12 +45,12 @@ class MessagePassing {
         y = i;
       }
       else
-        return -1;
+        return null;
       
     }
       
 
-    return 1;
+    return a;
   }
 
   public void messagePassTest(int s, int o, int[][] matrix) {
@@ -58,10 +58,16 @@ class MessagePassing {
     int lc=(n/2.0 == n/2)?0:1;
     lc += n/2;
     int flag = 1;
+	int[][] temp;
     for(int i=0;i<lc && flag==1;i++) {
-      flag = spiral(n-i,i, matrix);
+      temp = spiral(n-i,i, matrix);
+	  if(temp != null)
+		matrix = temp;
+	  else
+		flag = -1;
     }
-    if(flag == 0)
+	
+    if(flag == 1)
       System.out.println("Yes");
     else
       System.out.println("No");
