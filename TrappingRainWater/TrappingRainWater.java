@@ -15,27 +15,28 @@ class TrappingRainWater {
                 return i;
         return -1;
     }
-    public int trap(int[] height) {
-        int count=0;
-        int left,right;
-        if(height.length<3)
-            return 0;
-        while( true ){
-            left = start(height);
-            if(left == -1)
-                break;
-            right = end(height);
-            for(int i=left;i<right;i++) {
-                if(height[i]==0)
-                    count++;
-                else
-                    height[i]--;
-               
-            
-            }
-            height[right]--;
-        }
-        return count;
+    public int trap(int[] arr) {
+        int n = arr.length;
+        int res = 0; 
+      
+        // For every element of the array 
+        for (int i = 1; i < n-1; i++) { 
+              
+            // Find the maximum element on its left 
+            int left = arr[i]; 
+            for (int j=0; j<i; j++) 
+               left = max(left, arr[j]); 
+              
+            // Find the maximum element on its right    
+            int right = arr[i]; 
+            for (int j=i+1; j<n; j++) 
+               right = max(right, arr[j]);  
+             
+           // Update the maximum water     
+           res = res + (min(left, right) - arr[i]);    
+        } 
+      
+        return res;  
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
