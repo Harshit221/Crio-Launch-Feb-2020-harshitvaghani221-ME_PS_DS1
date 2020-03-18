@@ -16,6 +16,8 @@ class TrappingRainWater {
         return -1;
     }
     public int trap(int[] height, int max) {
+        if (height.length < 3)
+            return 0;
         int count=0;
         int left,right;
         for(int k = 0; k<=max;k++){
