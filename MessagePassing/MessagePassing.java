@@ -42,7 +42,7 @@ class MessagePassing {
       list.set(i, Math.max(list.get(i-1)-1, list.get(i)));     
     }
 
-    if (list.get(list.size()-1) > 0)
+    if (list.get(list.size()-1) >= 0)
       System.out.println("Yes");
     else
       System.out.println("No");
