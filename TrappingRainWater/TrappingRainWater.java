@@ -15,10 +15,13 @@ class TrappingRainWater {
                 return i;
         return -1;
     }
-    public int trap(int[] height) {
+    public int trap(int[] height, int max) {
         int count=0;
         int left,right;
-        while( (left = start(height)) != -1 ){
+        for(int k = 0; k<=max;k++){
+            left = start(height);
+            if(left == -1)
+                break;
             right = end(height);
             for(int i=left;i<right;i++) {
                 if(height[i]==0)
@@ -35,11 +38,13 @@ class TrappingRainWater {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int height[] = new int[n];
+        int max = 0;
         for(int i = 0 ; i < n ; i++) {
             height[i] = scanner.nextInt();
+            max = Math.max(max, height[i]);
         }
         scanner.close();
-        int result = new TrappingRainWater().trap(height);
+        int result = new TrappingRainWater().trap(height, max);
         System.out.println(result);
     }
 }
