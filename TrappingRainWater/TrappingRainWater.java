@@ -20,7 +20,6 @@ class TrappingRainWater {
         int left,right;
         while( true ){
             left = start(height);
-            System.out.println(left);
             if(left == -1)
                 break;
             right = end(height);
