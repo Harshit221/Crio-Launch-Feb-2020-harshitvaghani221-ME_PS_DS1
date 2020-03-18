@@ -4,8 +4,10 @@ import java.util.*;
 class StringToIntegerAtoi {
     // Implement your solution by completing the below function
     public int myAtoi(String str) {
-
-        return Integer.parseInt(str.trim());
+        if(str.trim().equals(""))
+            return 0;
+        else
+            return Integer.parseInt(str.trim());
     }
 
     public static void main(String[] args) {
