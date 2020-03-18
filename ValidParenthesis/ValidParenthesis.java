@@ -5,9 +5,10 @@ public class ValidParenthesis {
     // Implement your solution by completing the below function
     public boolean isValid(String s) {
       Map<Character, Character> map = new HashMap<>();
-      map.add('(',')');
-      map.add('{','}');
-      map.add('[',']');
+      
+      map.put('(',')');
+      map.put('{','}');
+      map.put('[',']');
       int length = s.length();
       if(length%2==1)
         return false;
