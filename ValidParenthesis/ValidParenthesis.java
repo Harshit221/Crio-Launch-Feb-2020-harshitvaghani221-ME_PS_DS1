@@ -9,7 +9,7 @@ public class ValidParenthesis {
       map.add('{','}');
       map.add('[',']');
       int length = s.length();
-      if(length()%2==1)
+      if(length%2==1)
         return false;
       for(int i=0;i<length/2;i++) {
         if(map.get(s.charAt(i)) != s.charAt(length-i-1))
