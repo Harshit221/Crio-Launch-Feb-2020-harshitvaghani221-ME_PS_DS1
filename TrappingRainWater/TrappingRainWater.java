@@ -40,13 +40,11 @@ class TrappingRainWater {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int height[] = new int[n];
-        int max = 0;
         for(int i = 0 ; i < n ; i++) {
             height[i] = scanner.nextInt();
-            max = Math.max(max, height[i]);
         }
         scanner.close();
-        int result = new TrappingRainWater().trap(height, max);
+        int result = new TrappingRainWater().trap(height);
         System.out.println(result);
     }
 }
