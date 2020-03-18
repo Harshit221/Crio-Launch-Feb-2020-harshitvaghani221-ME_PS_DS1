@@ -4,7 +4,13 @@ import java.util.*;
 public class TwoSum {
     // Implement your solution by completing the below function	
     public int[] twoSum(int[] nums, int target) {
-
+        for(int i = 0;nums[i] < target;i++ ) {
+            for(int j=nums.length-1; nums[i] + nums[j] >= target;j--)
+            {
+                if(nums[i]+nums[j]==target)
+                    return new int[]{i,j};
+            }
+        }
         return new int[0];
     }
 
