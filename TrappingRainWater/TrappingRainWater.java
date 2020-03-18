@@ -17,7 +17,7 @@ class TrappingRainWater {
     }
     public int trap(int[] height) {
         int count=0;
-        int left=0,right;
+        int left,right;
         while( (left = start(height)) != -1 ){
             right = end(height);
             for(int i=left;i<right;i++) {
