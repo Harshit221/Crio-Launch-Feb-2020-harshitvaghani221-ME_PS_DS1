@@ -36,6 +36,14 @@ class MessagePassing {
 
   public void messagePassTest(int s, int o, int[][] matrix) {
 
+    if(n == 1 && s >= 1) {
+      System.out.println("Yes");
+      return;
+    }
+    if(s == 0) {
+      System.out.println("No");
+      return;
+    }
     int flag = 0;
     List<Integer> list = spiralOrder(matrix);
     for(int i = 1;i<list.size();i++) {
