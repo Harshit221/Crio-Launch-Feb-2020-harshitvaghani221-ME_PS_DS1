@@ -3,40 +3,29 @@ import java.util.*;
 class TrappingRainWater {
 
     // complete the below function implementation
-    public int start(int[] a) {
-        for(int i=0;i<a.length;i++)
-            if(a[i]>0)
-                return i;
-        return -1;
-    }
-    public int end(int[] a) {
-        for(int i=a.length-1;i>=0;i--)
-            if(a[i]>0)
-                return i;
-        return -1;
-    }
-    public int trap(int[] arr) {
-        int n = arr.length;
-        int res = 0; 
-      
-        // For every element of the array 
-        for (int i = 1; i < n-1; i++) { 
-              
-            // Find the maximum element on its left 
-            int left = arr[i]; 
-            for (int j=0; j<i; j++) 
-               left = Math.max(left, arr[j]); 
-              
-            // Find the maximum element on its right    
-            int right = arr[i]; 
-            for (int j=i+1; j<n; j++) 
-               right = Math.max(right, arr[j]);  
-             
-           // Update the maximum water     
-           res = res + (Math.min(left, right) - arr[i]);    
-        } 
-      
-        return res;  
+    public int trap(int[] height) {
+        if (height.length < 3) return 0;
+        int i = 0;
+        int j = height.length - 1;
+        int res = 0;
+        while (i < j) {
+            int leftHeight = height[i];
+            int rightHeight = height[j];
+            if (leftHeight <= rightHeight) {
+                i++;
+                while (i < j && height[i] <= leftHeight) {
+                    res += leftHeight - height[i];
+                    i++;
+                }
+            } else {
+                j--;
+                while (i < j && height[j] <= rightHeight) {
+                    res += rightHeight - height[j];
+                    j--;
+                }
+            }
+        }
+        return res;
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
