@@ -5,7 +5,7 @@ class StringToIntegerAtoi {
     // Implement your solution by completing the below function
     public int myAtoi(String str) {
 
-        return 0;
+        return Integer.parseInt(str.trim());
     }
 
     public static void main(String[] args) {
