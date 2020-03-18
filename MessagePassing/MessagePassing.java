@@ -39,7 +39,8 @@ class MessagePassing {
     int flag = 0;
     List<Integer> list = spiralOrder(matrix);
     for(int i = 1;i<list.size();i++) {
-      list.set(i, Math.max(list.get(i-1)-1, list.get(i)));     
+      list.set(i, Math.max(list.get(i-1)-1, list.get(i)));
+	  System.out.print( list.get(i) + " ");
     }
 
     if (list.get(list.size()-1) > 0)
@@ -62,14 +63,7 @@ class MessagePassing {
       p = scanner.nextInt();
       matrix[x][y] = Math.max(p, matrix[x][y]);
     }
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) {
-        if (matrix[i][j] > 0)
-          matrix[i][j]++;
-        else
-          matrix[i][j] = -1;
-      }
-    }
+    
     scanner.close();
 
     new MessagePassing().messagePassTest(s, m, matrix);
