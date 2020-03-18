@@ -36,7 +36,7 @@ class MessagePassing {
 
   public void messagePassTest(int s, int o, int[][] matrix) {
 
-    if(n == 1 && s >= 1) {
+    if(matrix.length == 1 && s >= 1) {
       System.out.println("Yes");
       return;
     }
