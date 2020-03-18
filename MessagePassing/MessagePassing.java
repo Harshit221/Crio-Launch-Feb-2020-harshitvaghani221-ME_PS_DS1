@@ -5,69 +5,44 @@ class MessagePassing {
 
   // Complete the below function implementation
   // Print "Yes" for success and "No" for Failure
-  
-  int[][] spiral(int n,int s, int[][] a) {
-    int x = s,y = s;
-    
-    for(int i=s+1;i<n;i++) {
-      if(a[x][y] > 0) {
-        a[s][i] = Math.max(a[x][y] - 1, a[s][i]);
-        x = s;
-        y = i;
-      }
-      else
-        return null;
-    }
-      
-    for(int i=s+1;i<n;i++) {
-      if(a[x][y] > 0) {
-        a[i][n-1] = Math.max(a[x][y] - 1, a[i][n-1]);
-        x = s;
-        y = i;
-      }
-      else
-        return null;
-    }
-    for(int i=n-2;i>=s;i--) {
-      if(a[x][y] > 0) {
-        a[n-1][i] = Math.max(a[x][y] - 1, a[n-1][i]);
-        x = s;
-        y = i;
-      }
-      else
-        return null;
-      
-    }
-    for(int i=n-2;i>s;i--) {
-      if(a[x][y] > 0) {
-        a[i][s] = Math.max(a[x][y] - 1, a[i][s]);
-        x = s;
-        y = i;
-      }
-      else
-        return null;
-      
-    }
-      
 
-    return a;
+  public List<Integer> spiralOrder(int[][] a) {
+    int i, k = 0, l = 0, m = a.length, n = a[0].length;
+    List<Integer> list = new ArrayList<>();
+    while (k < m && l < n) {
+      for (i = l; i < n; ++i) {
+        list.add(a[k][i]);
+      }
+      k++;
+      for (i = k; i < m; ++i) {
+        list.add(a[i][n - 1]);
+      }
+      n--;
+      if (k < m) {
+        for (i = n - 1; i >= l; --i) {
+          list.add(a[m - 1][i]);
+        }
+        m--;
+      }
+      if (l < n) {
+        for (i = m - 1; i >= k; --i) {
+          list.add(a[i][l]);
+        }
+        l++;
+      }
+    }
+    return list;
   }
 
   public void messagePassTest(int s, int o, int[][] matrix) {
-    int n = matrix.length;
-    int lc=(n/2.0 == n/2)?0:1;
-    lc += n/2;
-    int flag = 1;
-	int[][] temp;
-    for(int i=0;i<lc && flag==1;i++) {
-      temp = spiral(n-i,i, matrix);
-	  if(temp != null)
-		matrix = temp;
-	  else
-		flag = -1;
+
+    int flag = 0;
+    List<Integer> list = spiralOrder(matrix);
+    for(int i = 1;i<list.size();i++) {
+      list.set(i, Math.max(list.get(i-1)-1, list.get(i)));     
     }
-	
-    if(flag == 1)
+
+    if (list.get(list.size()-1) >= 0)
       System.out.println("Yes");
     else
       System.out.println("No");
@@ -87,16 +62,16 @@ class MessagePassing {
       p = scanner.nextInt();
       matrix[x][y] = Math.max(p, matrix[x][y]);
     }
-    for(int i = 0; i < n; i++) {
-      for(int j = 0; j < n; j++) {
-        if(matrix[i][j] > 0)
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < n; j++) {
+        if (matrix[i][j] > 0)
           matrix[i][j]++;
         else
           matrix[i][j] = -1;
       }
     }
     scanner.close();
-    
+
     new MessagePassing().messagePassTest(s, m, matrix);
   }
 }
