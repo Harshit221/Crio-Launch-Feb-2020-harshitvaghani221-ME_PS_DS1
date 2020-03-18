@@ -21,10 +21,10 @@ class TrappingRainWater {
         while( (left = start(a)) != -1 ){
             right = end(a);
             for(int i=left;i<right;i++) {
-                if(a[i]==0)
+                if(height[i]==0)
                     count++;
                 else
-                    a[i]--;
+                    height[i]--;
             }
             
 
